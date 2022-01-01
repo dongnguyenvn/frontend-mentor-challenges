@@ -1,0 +1,34 @@
+{
+  "env": {
+    "es2021": true,
+    "browser": true,
+    "node": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-control-statements/recommended",
+    "plugin:import/errors",
+    "prettier"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2021,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "plugins": ["react", "jsx-control-statements", "jsx-a11y", "import"],
+  "rules": {
+    "import-quotes/import-quotes": [1, "single"],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}
