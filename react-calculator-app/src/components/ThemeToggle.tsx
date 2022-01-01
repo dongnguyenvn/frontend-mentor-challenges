@@ -5,6 +5,13 @@ type Theme = {
   label: string
   value: string
 }
+
+type ToggleProps = {
+  index: number
+}
+
+const DEFAULT_THEME = 'theme-blue'
+
 const themes: Theme[] = [
   {
     label: '1',
@@ -20,7 +27,7 @@ const themes: Theme[] = [
   },
 ]
 
-const Toggle = ({ index }: { index: number }) => {
+const Toggle = ({ index }: ToggleProps) => {
   return (
     <div
       className={clsx(
@@ -39,7 +46,7 @@ const Toggle = ({ index }: { index: number }) => {
 }
 
 const ThemeToggle = () => {
-  const [active, setActive] = useState('theme-blue')
+  const [active, setActive] = useState(DEFAULT_THEME)
 
   useEffect(() => {
     themes.forEach(({ value }) =>
@@ -48,9 +55,11 @@ const ThemeToggle = () => {
   }, [active])
 
   const index = themes.findIndex(({ value }) => value === active)
-  const handleChangeTheme = (e : ChangeEvent<HTMLInputElement>) => {
+
+  const handleChangeTheme = (e: ChangeEvent<HTMLInputElement>) => {
     setActive(e.target.value)
   }
+
   return (
     <div
       role="group"
