@@ -9,7 +9,7 @@ import { useReducer, useMemo, Reducer } from 'react'
 
 const initialState = ['0']
 
-enum CountActionKind {
+enum CalculatorActionKind {
   RESET,
   PUSH,
   REMOVE,
@@ -18,16 +18,16 @@ enum CountActionKind {
 }
 
 type Action = {
-  type: CountActionKind
+  type: CalculatorActionKind
   value ?: any
 }
 
 const calculatorReducer: Reducer<string[], Action> = (state = [], action) => {
-  if (action.type === CountActionKind.RESET) {
+  if (action.type === CalculatorActionKind.RESET) {
     return initialState
   }
 
-  if (action.type === CountActionKind.PUSH) {
+  if (action.type === CalculatorActionKind.PUSH) {
     const last = findLast(state)
 
     if (isOperator(last)) {
@@ -45,7 +45,7 @@ const calculatorReducer: Reducer<string[], Action> = (state = [], action) => {
     return [...state.slice(0, -1), last + action.value]
   }
 
-  if (action.type === CountActionKind.REMOVE) {
+  if (action.type === CalculatorActionKind.REMOVE) {
     const last = findLast(state)
 
     if (isOperator(last)) {
@@ -55,7 +55,7 @@ const calculatorReducer: Reducer<string[], Action> = (state = [], action) => {
     return [...state.slice(0, -1), String(last).slice(0, -1)]
   }
 
-  if (action.type === CountActionKind.OPERATE) {
+  if (action.type === CalculatorActionKind.OPERATE) {
     const last = findLast(state)
 
     if (isOperator(last)) {
@@ -69,7 +69,7 @@ const calculatorReducer: Reducer<string[], Action> = (state = [], action) => {
     return [...state, action.value]
   }
 
-  if (action.type === CountActionKind.ENTER) {
+  if (action.type === CalculatorActionKind.ENTER) {
     return calculate(state)
   }
 
@@ -81,11 +81,11 @@ export function useCalculator() {
 
   const actions = useMemo(
     () => ({
-      reset: () => () => dispatch({ type: CountActionKind.RESET }),
-      push: (value: string) => () => dispatch({ type: CountActionKind.PUSH, value }),
-      remove: () => () => dispatch({ type: CountActionKind.REMOVE }),
-      operate: (value: string) => () => dispatch({ type: CountActionKind.OPERATE, value }),
-      enter: () => () => dispatch({ type: CountActionKind.ENTER }),
+      reset: () => () => dispatch({ type: CalculatorActionKind.RESET }),
+      push: (value: string) => () => dispatch({ type: CalculatorActionKind.PUSH, value }),
+      remove: () => () => dispatch({ type: CalculatorActionKind.REMOVE }),
+      operate: (value: string) => () => dispatch({ type: CalculatorActionKind.OPERATE, value }),
+      enter: () => () => dispatch({ type: CalculatorActionKind.ENTER }),
     }),
     [dispatch],
   )

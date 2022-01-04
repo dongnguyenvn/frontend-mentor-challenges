@@ -18,6 +18,7 @@ function App() {
           <ThemeToggle />
         </header>
         <Calculator />
+        <Calculator />
       </main>
     </div>
   )
