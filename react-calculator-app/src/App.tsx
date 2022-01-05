@@ -12,12 +12,11 @@ function App() {
         'violet:bg-violet-900 violet:text-yellow-400',
       )}
     >
-      <main className="flex flex-col gap-8 w-screen max-w-xl">
+      <main className="flex flex-col gap-8 w-screen max-w-lg">
         <header className={clsx('flex justify-between items-end')}>
           <h1 className="text-3xl font-bold">Calc</h1>
           <ThemeToggle />
         </header>
-        <Calculator />
         <Calculator />
       </main>
     </div>

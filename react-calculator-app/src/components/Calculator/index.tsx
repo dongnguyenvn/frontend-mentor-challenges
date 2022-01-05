@@ -1,4 +1,18 @@
-const Screen = () => <div />
+import clsx from 'clsx'
+import { FC } from 'react'
+
+const Screen: FC = ({ children }) => (
+  <div
+    className={clsx(
+      'p-6 pb-4 text-3xl text-right rounded-lg font-bold',
+      'blue:bg-blue-800',
+      'cyan:bg-gray-400',
+      'violet:bg-violet-800'
+    )}
+  >
+    <output>{children}</output>
+  </div>
+)
 
 const Button = () => <button></button>
 
@@ -30,10 +44,12 @@ const Keypad = () => (
 
 const Calculator = () => {
   return (
-    <form>
-      <Screen />
-      <Keypad />
-    </form>
+    <>
+      <Screen>0</Screen>
+      <form>
+        <Keypad />
+      </form>
+    </>
   )
 }
 
