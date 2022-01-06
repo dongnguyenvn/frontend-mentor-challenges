@@ -46,7 +46,7 @@ const Keypad: FC = () => {
       <Number>.</Number>
       <Number>0</Number>
       <Operator>/</Operator>
-      <Operator>*</Operator>
+      <Operator>X</Operator>
 
       <Reset>RESET</Reset>
       <Equal>=</Equal>

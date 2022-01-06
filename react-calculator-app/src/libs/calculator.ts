@@ -13,12 +13,12 @@ export function findLastOperator(calculation: string[]) {
 }
 
 export function isOperator(token: string) {
-  return ['+', '-', 'x', '/'].includes(token)
+  return ['+', '-', 'X', '/'].includes(token)
 }
 
 function PEMDAS(calculation: string[]) {
   const index = calculation.findIndex((operator) =>
-    ['x', '/'].includes(operator),
+    ['X', '/'].includes(operator),
   )
 
   return index !== -1
@@ -30,7 +30,7 @@ function merge([left, operator, right]: string[]) {
   const optionCalc: { [key: string]: (left: number, right: number) => number } =
     {
       '/': (a: number, b: number) => a / b,
-      'x': (a: number, b: number) => a * b,
+      'X': (a: number, b: number) => a * b,
       '+': (a: number, b: number) => a + b,
       '-': (a: number, b: number) => a - b,
     }
