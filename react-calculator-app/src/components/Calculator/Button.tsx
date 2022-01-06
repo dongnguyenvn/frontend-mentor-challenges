@@ -30,7 +30,7 @@ const Operator: FC = ({ children }) => {
     <button
       type="button"
       className={clsx(
-        'font-bold rounded shadow-normal',
+        'font-bold rounded shadow-normal text-2xl',
         'blue:bg-orange-500 blue:text-blue-600 blue:ring-orange-600',
         'cyan:bg-yellow-500 cyan:ring-yellow-600',
         'violet:bg-violet-700 violet:ring-violet-600',

@@ -16,7 +16,6 @@ const Screen: FC = ({ children }) => (
   </div>
 )
 
-const Toggle = () => <div />
 
 const Keypad: FC = () => {
   return (
@@ -46,7 +45,7 @@ const Keypad: FC = () => {
       <Number>.</Number>
       <Number>0</Number>
       <Operator>/</Operator>
-      <Operator>X</Operator>
+      <Operator>x</Operator>
 
       <Reset>RESET</Reset>
       <Equal>=</Equal>
