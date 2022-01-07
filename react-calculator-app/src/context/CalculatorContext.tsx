@@ -2,8 +2,7 @@ import {
   findLast,
   isOperator,
   findLastOperator,
-  calculate,
-  format,
+  calculate
 } from '../libs/calculator'
 import { useReducer, Reducer, createContext, FC,Dispatch } from 'react'
 
