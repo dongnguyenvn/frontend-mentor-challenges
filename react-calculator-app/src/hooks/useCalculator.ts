@@ -2,7 +2,7 @@ import { useMemo, useContext } from 'react'
 import {
   CalculatorContext,
   CalculatorActionKind,
-} from '../context/calculatorStore'
+} from '../context/calculatorContext'
 import {
   findLast,
   findLastOperator,
