@@ -27,15 +27,23 @@ function PEMDAS(calculation: string[]) {
 }
 
 function merge([left, operator, right]: string[]) {
-  const optionCalc: { [key: string]: (left: number, right: number) => number } =
-    {
-      '/': (a: number, b: number) => a / b,
-      'x': (a: number, b: number) => a * b,
-      '+': (a: number, b: number) => a + b,
-      '-': (a: number, b: number) => a - b,
-    }
+  const optionCalc: Record<string, (left: number, right: number) => number> = {
+    '/': (a: number, b: number) => a / b,
+    x: (a: number, b: number) => a * b,
+    '+': (a: number, b: number) => a + b,
+    '-': (a: number, b: number) => a - b,
+  }
 
   return optionCalc[operator](Number(left), Number(right)).toString()
+  // const optionCalc: { [key: string]: (left: number, right: number) => number } =
+  //   {
+  //     '/': (a: number, b: number) => a / b,
+  //     'x': (a: number, b: number) => a * b,
+  //     '+': (a: number, b: number) => a + b,
+  //     '-': (a: number, b: number) => a - b,
+  //   }
+
+  // return optionCalc[operator](Number(left), Number(right)).toString()
 }
 
 export function calculate(calculation: string[]): string[] {

@@ -1,8 +1,5 @@
 import { useMemo, useContext } from 'react'
-import {
-  CalculatorContext,
-  CalculatorActionKind,
-} from '../context/calculatorContext'
+import { CalculatorActionKind, CalculatorContext } from '../context/CalculatorContext'
 import {
   findLast,
   findLastOperator,
